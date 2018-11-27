@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+
+  <title>Poker Game web page</title>
+
+  <style>
+
+
+    body {
+      background-color: black;
+    }
+    #plmoney,#pomoney,#bomoney {
+      color: "white";
+    }
+		
+	  .flip-box {
+	    margin-left:100px;
+      background-color: transparent;
+      width: 100px;
+      height: 150px;
+      border: 1px solid #f1f1f1;
+      perspective: 1000px;
+	    /* animation: firstmove 5s;	   */
+    }
+		
+	  .flip-box-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;																																													
+      transform-style: preserve-3d;
+      /* transition: transform 0.8s; */
+    }
+
+    .flip-box-front, .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .flip-box-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    .flip-box-back {
+      background-color: dodgerblue;
+      color: white;
+      transform: rotateY(180deg);
+    }
+        
+    .rectangle {
+      margin-left:300px;
+      height:350px ;
+      width:1150px;
+      background-color: #FFC300;
+      margin-top: 30px;
+    }
+
+    .POMO {
+      font-size: 25px
+    }
+
+    .rect{
+      height: 400px;
+      width: 1150px;
+      background-color: green;
+    }
+
+    .image_user{
+      margin-left: 100px;
+      margin-top: 10px
+    }
+
+    .button_function{
+      margin-left: 20px;
+      backface-visibility:hidden;
+      /* animation: firstmove 10s  */
+    }
+
+    .money{
+      margin-top: 20px;
+      margin-left: 300px;
+      font-size: 60px;
+      color: red;
+    }
+
+    .nameCard{
+      margin-left: 0px;
+      margin-top: 1px;
+    }
+
+    .betbox{
+      color: white;
+    }
+
+    .slider{
+      width: 500px !important;
+      margin-left: 25px;
+    }
+		
+		.row {
+      display: flex;
+    }
+
+    .column {
+      flex: 33.33%;
+      padding: 5px;
+    }
+
+    .column1{
+      flex:20%;
+	    padding:5px;
+      /* width : 160px !important; */
+    }
+    
+    .mon{
+      margin-left: 20px;
+    }
+
+    .place{
+      margin-left: 300px;
+      color : white;
+    }
+
+    #botsays{
+    	font-size: 23px;
+    }
+
+    @keyframes firstmove{
+      from{transform: rotateY(180deg);}
+    }
+
+  </style>
+
+</head>
+
+<body bgcolor="green">
+
+  <font color="white">
+    <h3 id="bomoney" class="mon">BOT MONEY : </h3>
+  </font>
+
+  <div class="row">
+
+    <div class="column">
+      <img src="1234.png" class="image_user" height="150px">
+    </div>
+
+    <div class="column">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C7" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C8" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="place" id="botsays">Press START</div>
+
+  <br>
+
+  <div class="row">
+
+    <div class="column1">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C0" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column1">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C1" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column1">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C2" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column1">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C3" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column1">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C4" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="CardDistribute.js"></script>
+    <script type="text/javascript" src="CardnDeck.js"></script>
+    <script type="text/javascript" src="HandTypes.js"></script>
+    <script type="text/javascript" src="Gameplay.js"></script>
+    <script type="text/javascript" src="BOT.js"></script>
+
+    <font color="white">
+      <h3 id="pomoney" align="center" class="POMO">POT MONEY : </h3>
+    </font>
+
+  </div>
+
+  <br>
+
+  <font color="white">
+    <h3 id="plmoney" class="mon">PLAYER MONEY : </h3>
+  </font>
+
+  <div class="row">
+
+    <div class="column">
+      <img src="profile pic.jpg" class="image_user" height="150px">
+    </div>
+
+    <div class="column">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C5" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="CardBack.png" id="C6" style="width:100px;height:150px">
+          </div>
+          <div class="flip-box-back">
+            <img src="CardBack.png" style="width:100px;height:150px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+    function flipCard(i) {
+      var x = play.allcards.player_hand[i].suit;
+      var y = play.allcards.player_hand[i].value;
+      var identity = y + "-" + x + ".png";
+      document.getElementById("C" + i).src = identity;
+    }
+  </script>
+
+  <br>
+
+  <p class="betbox">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBet Slider</p>
+  <span id="valBox" class="betbox">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 0</span>
+  <input type="range" min="0" max="500" step="1" class="slider" id="betamt" oninput=" document.getElementById('valBox').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+this.value;">
+  
+  <br>
+  
+  <button class="button_function btn btn-default" id="bet" onclick="player_action = 2 ; turn1() ; ">BET</button>
+  <button class="button_function btn btn-default" id="check" onclick="player_action = 3 ; turn1() ; ">CHECK</button>
+  <button class="button_function btn btn-default" id="allin" onclick="player_action = 1 ; turn1() ; ">ALL IN</button>
+  <button class="button_function btn btn-default" id="fold" onclick="player_action = 0 ; turn1() ; ">FOLD</button>
+  <button class="button_function btn btn-default" onclick="start()">START</button>
+  <button class="button_function btn btn-default" onclick="reset()">RESET</button>
+  
+  <script type="text/javascript">
+    var start = function () {
+      game(); flipCard(5); flipCard(6);
+      document.getElementById("botsays").innerHTML = "The Game has Started"
+    }
+  </script>
+
+</body>
+
+</html>

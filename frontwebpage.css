@@ -1,0 +1,24 @@
+h1{
+	text-align: center;
+	color: white;
+	background-color: black;
+	border-color: black;
+	border-style: solid;
+}
+#help{
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 340px;
+	font-size: 19px;
+}
+#start{
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 285px;
+	font-size: 21px;
+}
+body {
+   background-image: url("Background.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+}
